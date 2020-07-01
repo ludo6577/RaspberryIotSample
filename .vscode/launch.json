@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "transfer",
-            "program": "~/${workspaceFolderBasename}/RaspberryIotSample",
+            "program": "~/${workspaceFolderBasename}/${workspaceFolderBasename}",
             "pipeTransport": {
                 "pipeCwd": "${workspaceFolder}",
                 "pipeProgram": "plink",
