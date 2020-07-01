@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (remote console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "transfer",
+            "program": "~/${workspaceFolderBasename}/RaspberryIotSample",
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "plink",
+                "pipeArgs": [
+                    "-pw",
+                    "<PASSWORD>",
+                    "<USER>@raspberrypi.local",
+                ],
+                "debuggerPath": "~/vsdbg/vsdbg"
+            }
+        }
+    ]
+}

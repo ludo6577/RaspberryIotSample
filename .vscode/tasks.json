@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "publish",
+            "type": "process",
+            "command": "dotnet",
+            "args" : ["publish", "--configuration", "Debug", "--runtime", "linux-arm"]
+        },
+        {
+            "label": "transfer",
+            "dependsOn": "publish",
+            "type": "shell",
+            "command": "pscp",
+            "args" : [
+                "-pw",
+                 "<PASSWORD>",
+                  "-v",
+                  "-r",
+                  "./bin/Debug/netcoreapp3.1/linux-arm/publish/*",
+                  "<USER>@raspberrypi.local:/home/pi/${workspaceFolderBasename}"
+            ]
+        }
+    ]
+}
